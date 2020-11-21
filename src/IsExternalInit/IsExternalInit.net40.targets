@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IsExternalInitPolyfillPath Condition="'$(IsExternalInitPolyfillPath)' == ''">$(MSBuildThisFileDirectory)..\..\contentFiles\cs\net40\IsExternalInit\IsExternalInit.cs.pp</IsExternalInitPolyfillPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+    Workaround for https://github.com/dotnet/wpf/issues/810.
+    Thanks to the contributors of https://github.com/tunnelvisionlabs/ReferenceAssemblyAnnotator/pull/82 for the solution!
+    -->
+    <_GeneratedCodeFiles Include="$(IsExternalInitPolyfillPath)" Visible="false" Condition="'$(UseWPF)' == 'true' And Exists($(IsExternalInitPolyfillPath))" />
+  </ItemGroup>
+</Project>

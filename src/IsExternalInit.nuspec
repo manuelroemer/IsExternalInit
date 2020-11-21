@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>IsExternalInit</id>
-    <version>1.0.0-preview1</version>
+    <version>1.0.0</version>
     <developmentDependency>true</developmentDependency>
     <authors>Manuel Römer</authors>
     <license type="expression">MIT</license>
@@ -50,6 +50,13 @@ Please see https://github.com/manuelroemer/IsExternalInit for additional informa
     <!-- >= .NET 5 supports IsExternalInit. -->
     <file src="../../src/.nuget/_._" target="contentFiles/cs/net5.0"/>
     <file src="../../src/.nuget/_._" target="content/net5.0"/>
+
+    <!-- Include an MSBuild .targets file fixing an issue with WPF projects. -->
+    <file src="../../src/IsExternalInit/IsExternalInit.netstandard1.0.targets" target="build/netstandard1.0/IsExternalInit.targets" />
+    <file src="../../src/IsExternalInit/IsExternalInit.netstandard2.0.targets" target="build/netstandard2.0/IsExternalInit.targets" />
+    <file src="../../src/IsExternalInit/IsExternalInit.net20.targets" target="build/net20/IsExternalInit.targets" />
+    <file src="../../src/IsExternalInit/IsExternalInit.net40.targets" target="build/net40/IsExternalInit.targets" />
+    <file src="../../src/.nuget/_._" target="build/net5.0" />
 
     <!-- Package icon. -->
     <file src="../../assets/Icon128x128.png" target="icon.png" />
