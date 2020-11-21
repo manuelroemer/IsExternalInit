@@ -2,7 +2,7 @@
 
 _Use C# 9's init and record features in in older target frameworks._
 
-[:running: Quickstart](#quickstart) &nbsp; | &nbsp; [:package: NuGet](https://www.nuget.org/packages/nullable)
+[:running: Quickstart](#quickstart) &nbsp; | &nbsp; [:package: NuGet](https://www.nuget.org/packages/isexternalinit)
 
 <hr/>
 
