@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>IsExternalInit</id>
+    <version>1.0.0-preview1</version>
+    <developmentDependency>true</developmentDependency>
+    <authors>Manuel Römer</authors>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/manuelroemer/IsExternalInit</projectUrl>
+    <repository type="git" url="https://github.com/manuelroemer/IsExternalInit"/>
+    <description>
+A source code only package which allows you to use C# 9's init and record features in older target frameworks like .NET Standard 2.0 or the "old" .NET Framework by providing a polyfill for the IsExternalInit class.
+
+This package does not contain any compiled binaries, but instead adds the IsExternalInit class as C# source code to your project. Because this code is compiled together with the rest of your code, the built binaries will not have a dependency on this package, meaning that you can perfectly use it for both libraries and applications.
+
+The C# code is only included if you are targeting a framework version which does not support the IsExternalInit class. For example, if you create a library which multi-targets .NET Standard 2.0 and .NET 5.0, the IsExternalInit class is not provided in the .NET 5.0 compilation, because .NET 5.0 already provides support for the class by default.
+
+Please see https://github.com/manuelroemer/IsExternalInit for additional information on how to use this package.
+    </description>
+    <releaseNotes>https://github.com/manuelroemer/IsExternalInit/blob/master/CHANGELOG.md</releaseNotes>
+    <tags>source compiletime polyfill IsExternalInit init record</tags>
+    <icon>icon.png</icon>
+    <contentFiles>
+      <files include="**/*.cs.pp"/>
+    </contentFiles>
+  </metadata>
+  <files>
+    <!--
+    Only target frameworks < .NET 5.0 require the IsExternalInit class.
+
+    Since we also support both PackageReferences and packages.config, the files must be included twice:
+    Once as contentFiles (for PackageReferences) and as content (for packages.config).
+    -->
+
+    <!-- TFMs not supporting IsExternalInit and not supporting ExcludeFromCodeCoverage. -->
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp"/>
+
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net20/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net20/IsExternalInit/IsExternalInit.cs.pp"/>
+
+    <!-- TFMs not supporting IsExternalInit and supporting ExcludeFromCodeCoverage. -->
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp"/>
+
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net40/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net40/IsExternalInit/IsExternalInit.cs.pp"/>
+
+    <!-- >= .NET 5 supports IsExternalInit. -->
+    <file src="../../src/.nuget/_._" target="contentFiles/cs/net5.0"/>
+    <file src="../../src/.nuget/_._" target="content/net5.0"/>
+
+    <!-- Package icon. -->
+    <file src="../../assets/Icon128x128.png" target="icon.png" />
+  </files>
+</package>
