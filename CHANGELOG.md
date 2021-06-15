@@ -8,6 +8,9 @@ This is because this then ends up breaking actual stable code
 and the ones provided at runtime was exposed to not supposed
 to be usable by projects.
 
+Thanks to [@AraHaan](https://github.com/AraHaan) for the PR ([#6](https://github.com/manuelroemer/IsExternalInit/pull/6))!
+
+
 # v1.0.0
 
 The initial release.
