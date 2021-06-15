@@ -1,5 +1,13 @@
 # Changelog
 
+# v1.0.1
+
+Fixed issue where code is not used by every TFM.
+
+This is because this then ends up breaking actual stable code
+and the ones provided at runtime was exposed to not supposed
+to be usable by projects.
+
 # v1.0.0
 
 The initial release.
