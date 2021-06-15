@@ -28,18 +28,6 @@ The code for the `IsExternalInit` class is added **at compile time** and gets **
 This means that the resulting project **does not have an explicit dependency** on the `IsExternalInit`
 package, because the code is not distributed as a standard library.
 
-Futhermore, the code only gets added to the project if the `IsExternalInit` class is not already
-supported by the target framework.
-The images below show an example - in the library which targets .NET Standard 2.0 the `IsExternalInit`
-class has been added during the compilation.
-That is not the case for the library targeting .NET 5.0, because it is already present in its BCL.
-This allows you to easily **multi-target** your projects without having to change a single line of
-code.
-
-| .NET Standard 2.0 | .NET 5.0 |
-| ----------------- | -------- |
-| ![.NET Standard 2.0](.github/CompiledNetStandard2.0.png) | ![.NET Standard 2.1](.github/CompiledNet5.0.png) |
-
 
 ## Compatibility
 
