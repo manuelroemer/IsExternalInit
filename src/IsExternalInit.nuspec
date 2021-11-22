@@ -55,16 +55,6 @@ Please see https://github.com/manuelroemer/IsExternalInit for additional informa
     <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net5.0/IsExternalInit/IsExternalInit.cs.pp"/>
     <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net5.0/IsExternalInit/IsExternalInit.cs.pp"/>
 
-    <!--
-    Include an MSBuild .targets file fixing an issue with WPF projects.
-
-    For >= .NET 5 the netstandard 2.0 one can be used instead.
-    -->
-    <file src="../../src/IsExternalInit/IsExternalInit.netstandard1.0.targets" target="build/netstandard1.0/IsExternalInit.targets" />
-    <file src="../../src/IsExternalInit/IsExternalInit.netstandard2.0.targets" target="build/netstandard2.0/IsExternalInit.targets" />
-    <file src="../../src/IsExternalInit/IsExternalInit.net20.targets" target="build/net20/IsExternalInit.targets" />
-    <file src="../../src/IsExternalInit/IsExternalInit.net40.targets" target="build/net40/IsExternalInit.targets" />
-
     <!-- Package icon. -->
     <file src="../../assets/Icon128x128.png" target="icon.png" />
   </files>
