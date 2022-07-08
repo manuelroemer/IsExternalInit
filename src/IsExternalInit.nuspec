@@ -22,7 +22,7 @@ Please see https://github.com/manuelroemer/IsExternalInit for additional informa
     <tags>source compiletime polyfill IsExternalInit init record</tags>
     <icon>icon.png</icon>
     <contentFiles>
-      <files include="**/*.cs.pp"/>
+      <files include="**/*.cs"/>
     </contentFiles>
   </metadata>
   <files>
@@ -34,26 +34,29 @@ Please see https://github.com/manuelroemer/IsExternalInit for additional informa
     -->
 
     <!-- TFMs not supporting IsExternalInit and not supporting ExcludeFromCodeCoverage. -->
-    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp"/>
-    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs" target="contentFiles/cs/netstandard1.0/IsExternalInit/IsExternalInit.cs"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs" target="content/netstandard1.0/IsExternalInit/IsExternalInit.cs"/>
 
-    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net20/IsExternalInit/IsExternalInit.cs.pp"/>
-    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net20/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs" target="contentFiles/cs/net20/IsExternalInit/IsExternalInit.cs"/>
+    <file src="NoExcludeFromCodeCoverage/IsExternalInit.cs" target="content/net20/IsExternalInit/IsExternalInit.cs"/>
 
     <!-- TFMs not supporting IsExternalInit and supporting ExcludeFromCodeCoverage. -->
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp"/>
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="content/netstandard2.0/IsExternalInit/IsExternalInit.cs"/>
 
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net40/IsExternalInit/IsExternalInit.cs.pp"/>
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net40/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="contentFiles/cs/net40/IsExternalInit/IsExternalInit.cs"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="content/net40/IsExternalInit/IsExternalInit.cs"/>
 
     <!--
     >= .NET 5 requires IsExternalInit to be included per project.
 
     See issue: https://github.com/manuelroemer/IsExternalInit/issues/5 for more details.
     -->
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="contentFiles/cs/net5.0/IsExternalInit/IsExternalInit.cs.pp"/>
-    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs.pp" target="content/net5.0/IsExternalInit/IsExternalInit.cs.pp"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="contentFiles/cs/net5.0/IsExternalInit/IsExternalInit.cs"/>
+    <file src="ExcludeFromCodeCoverage/IsExternalInit.cs" target="content/net5.0/IsExternalInit/IsExternalInit.cs"/>
+
+    <!-- Hide content files from Visual Studio solution explorer  -->
+    <file src="../../src/IsExternalInit/IsExternalInit.props" target="build/IsExternalInit.props" />
 
     <!-- Package icon. -->
     <file src="../../assets/Icon128x128.png" target="icon.png" />
