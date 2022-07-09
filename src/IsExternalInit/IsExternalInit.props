@@ -1,5 +1,4 @@
 <Project>
-
   <!--
     Hide content files from Visual Studio solution explorer. Adapted from:
     https://til.cazzulino.com/dotnet/nuget/hide-contentfiles-from-your-nuget-packages
@@ -9,5 +8,4 @@
       <Visible Condition="'%(NuGetItemType)' == 'Compile' and '%(NuGetPackageId)' == 'IsExternalInit'">false</Visible>
     </Compile>
   </ItemGroup>
-
 </Project>
