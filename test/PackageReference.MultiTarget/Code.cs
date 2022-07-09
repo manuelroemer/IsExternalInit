@@ -1,5 +1,7 @@
 namespace Code
 {
+    using System.Diagnostics.CodeAnalysis;
+
     public record RecordClass(string CtorProp)
     {
         public string NormalProp { get; init; }
