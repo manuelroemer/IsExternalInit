@@ -1,6 +1,6 @@
 # IsExternalInit [![Nuget](https://img.shields.io/nuget/v/IsExternalInit)](https://www.nuget.org/packages/IsExternalInit)
 
-_Use C# 9's init and record features in in older target frameworks._
+_Use C# 9's init and record features in older target frameworks._
 
 [:running: Quickstart](#quickstart) &nbsp; | &nbsp; [:package: NuGet](https://www.nuget.org/packages/isexternalinit)
 
